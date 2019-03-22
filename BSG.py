@@ -8,6 +8,10 @@
 #Sigma=Volatility
 #T=Time to expiration
 #x=variable
+
+import math
+from scipy.stats import norm
+
 def D1(S0, X, r, Sigma, T):
   #a variable that is usedin all calculations
   d1=math.log((S0/X)+(r+(Sigma^2)/2)*T/(Sigma*math.sqrt(T)))
