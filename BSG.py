@@ -38,7 +38,7 @@ def Delta(S0, X, r, Sigma, T,Type="Call"):
   return myDelta
 
 def Gamma(S0, X, r, Sigma, T,Type="Call"):
-   #variation of option price per unit of variation of delta
+   #variation of Delta per unit of variation of Stock Price
   d1=D1(S0, X, r, Sigma, T)
   NL=Nline(d1)
   
