@@ -24,3 +24,5 @@ Volatility is the only variable that cannot be directly calculated or obtained f
 2 - Obtain current market prices of options and find the volatility that, when inserted in the Black-Scholes formula returns the current market price. - This is called Implicit Volatility.
 
 It is important to mention that Black and Scholes is based on the assumption that market returns are normally distributed, which is not allways true (specially during high volatility times). A development of the formulas in this repo would be to use a Power law instead of normal distribution. However, the estimation of the parameteres of this distribution would require extensive ressearch.
+
+The Repo Also include a package that calculates payoff of Option Strategies
