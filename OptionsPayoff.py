@@ -12,13 +12,13 @@ def putpayoff(BuySell,premium,Strike,ClosePrice,Quantity,T,Sigma,r):
   premium=math.fabs(premium)
   T=float(T)/365 #convertendo T de dias para Anos
   if BuySell=='BUY':
-    payoff=(BS(Strike, ClosePrice, r, Sigma, T,Type="Put")-premium)*Quantity  
+    payoff=(BS(ClosePrice, Strike, r, Sigma, T,Type="Put")-premium)*Quantity  
     #if Strike >= ClosePrice:
       #payoff=((Strike-ClosePrice)-premium)*Quantity
     #else:
       #payoff=-premium*Quantity
   elif BuySell=='SELL':
-    payoff=(premium-BS(Strike, ClosePrice, r, Sigma, T,Type="Put"))*Quantity  
+    payoff=(premium-BS(ClosePrice, Strike, r, Sigma, T,Type="Put"))*Quantity  
     #if Strike >= ClosePrice:
       #payoff=((ClosePrice-Strike)+premium)*Quantity
     #else:
@@ -29,13 +29,13 @@ def callpayoff(BuySell,premium,Strike,ClosePrice,Quantity,T,Sigma,r):
   premium=math.fabs(premium)
   T=float(T)/365
   if BuySell=='BUY':
-     payoff=(BS(Strike, ClosePrice, r, Sigma, T,"Call")-premium)*Quantity   
+     payoff=(BS(ClosePrice, Strike, r, Sigma, T,"Call")-premium)*Quantity   
     #if ClosePrice >= Strike:
     #  payoff=((ClosePrice-Strike)-premium)*Quantity
     #else:
     #  payoff=-premium*Quantity
   elif BuySell=='SELL':
-    payoff=(premium-BS(Strike, ClosePrice, r, Sigma, T,"Call"))*Quantity
+    payoff=(premium-BS(ClosePrice, Strike, r, Sigma, T,"Call"))*Quantity
     #if ClosePrice >= Strike:
     #  payoff=((Strike-ClosePrice)+premium)*Quantity
     #else:
