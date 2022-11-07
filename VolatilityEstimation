@@ -5,6 +5,6 @@ def Volatility(df, window=252):
     #pg 297 of John Hull's Book - Future Markets and Options + https://www.learnpythonwithrune.org/calculate-the-volatility-of-historic-stock-prices-with-pandas-and-python/
     df['relative_close']=(df['close']/df['close'].shift()).fillna(method="bfill")
     df['log_return']=np.log(df['relative_close'])
-    df['vol']=df['log_return'].expanding().std()*(252**0.5)
+    df['vol']=df['log_return'].expanding().std()*(window**0.5)
     
     return df['vol']
